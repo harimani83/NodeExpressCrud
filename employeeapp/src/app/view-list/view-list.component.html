@@ -1,0 +1,33 @@
+<h2> Awesome Bucketlist App </h2>
+
+  <!-- Table starts here -->
+  <table id="table">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Mobile</th>
+          <th>Email </th>
+          <th>Address</th>
+          <th>Department</th>
+          <th>Experience</th>
+          <th>Skill </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let list of lists">
+          <td>{{list.empid}}</td>
+          <td>{{list.empname}}</td>
+          <td>{{list.mobile}}</td>
+          <td>{{list.email}}</td>
+          <td>{{list.adress}}</td>
+          <td>{{list.department}}</td>
+          <td>{{list.experience}}</td>
+          <td>{{list.skill}}</td>
+          <td> <button type="button" (click)="deleteList(list); $event.stopPropagation();">Delete</button></td>
+
+        </tr>
+      </tbody>
+   </table>
+
+<app-add-list (addList)='onAddList($event)'> </app-add-list>
